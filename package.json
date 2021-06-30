@@ -1,0 +1,11 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "설명ㅁ",
+  "main": "app.js",
+  "scripts": {
+    "test": "git repository"
+  },
+  "author": "권영미",
+  "license": "ISC"
+}
