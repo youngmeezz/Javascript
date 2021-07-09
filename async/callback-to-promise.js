@@ -40,3 +40,6 @@ userStorage
     .then(user =>  alert(`Hello ${user.name}, you have a ${user.role} role`))
     .catch(console.log);
 
+
+//async와 await이용해서 작성해보기
+
