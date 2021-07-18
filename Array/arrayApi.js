@@ -206,5 +206,5 @@ const students = [
     .map(student => student.score)
     .sort((a,b) => a-b) //음수가 나오면 앞에가 더 크면 뒤로보내서 정렬시킴 오름차순
     .join();
-    console.log(result);
+    console.log(result); 
 }
