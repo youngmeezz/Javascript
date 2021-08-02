@@ -63,6 +63,15 @@ function check(){
 //heavy한 연산이나 함수는 뒤로 빼기
 console.log(`or: ${value1 || value2 || check()}`);
 
+//&& 연산자로 null체크도 많이 함 false나오면 null
+
+//often used to compress long if-statement
+//nullableObject && nullableObject.something
+
+// if(nullableObject != null){
+//     nullableObject.something;
+// }
+
 function check(){
     for(let i = 0; i < 10; i++){
         //wasting time
@@ -71,7 +80,26 @@ function check(){
     return true;
 }
 
-//&& 연산자로 null체크도 많이 함 false나오면 nlull
+// !(not)
+console.log(!value1);
 
-//often used to compress long if-statement
-//nullableObject && nullableObject.something
+// 7. Equality
+const stringFive = '5';
+const numberFive = 5;
+
+// == loose equality, with type conversion
+console.log(stringFive == numberFive); //true 타입 변경해서 나옴 문자이긴한데 안에 숫자 5이기 떄문에
+console.log(stringFive != numberFive); //false
+
+// === strict equlity, no type conversion
+console.log(stringFive === numberFive); //false
+console.log(stringFive !== numberFive); //true
+
+
+//object equality by reference
+const ellie1 = { name:'ellie'};
+const ellie2 = { name:'ellie'};
+const ellie3 = ellie1;
+console.log(ellie1 == ellie2); //false 1과2가 다른 레퍼런스 가리키고 있기 때문
+console.log(ellie1 === ellie2); //false 1과 2가 다른 레퍼런스 가리키고 있어서 타입이같아도 false
+console.log(ellie1 === ellie3); //true ellie3의 레퍼런스가 ellie1이 가리키고 있어서 
