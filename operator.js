@@ -103,3 +103,110 @@ const ellie3 = ellie1;
 console.log(ellie1 == ellie2); //false 1과2가 다른 레퍼런스 가리키고 있기 때문
 console.log(ellie1 === ellie2); //false 1과 2가 다른 레퍼런스 가리키고 있어서 타입이같아도 false
 console.log(ellie1 === ellie3); //true ellie3의 레퍼런스가 ellie1이 가리키고 있어서 
+
+//equality - puzzler
+console.log(0 == false); //true
+console.log(0 === false); //false 0은boolean타입이 아니기때문에
+console.log('' == false); //true **
+console.log('' === false); //false '' boolean타입이 아닉때문에
+console.log(null == undefined); //true  null 과 undefined는 같고 
+console.log(null === undefined); //false null과 undefined는 다른 타입
+
+
+//8. Conditional operations: if
+//if, else if, else
+const name = 'ellie';
+if(name === 'ellie'){
+    console.log('Welcome Ellie!');
+}else if (name === 'coder'){
+    console.log('You are amazing coder');
+}else {
+    console.log('unknown');
+}
+
+//9. Ternary operator: ?
+// condition ? value1 : value2;
+// 가독성 떨어져서 if나 switch 쓰기
+console.log(name === 'ellie' ? 'yes' : 'no');
+
+
+//10. Switch statement
+//use for multiple if checks
+//use for enum-like value check
+//use for multiple type checks in TS
+const browser = 'IE';
+switch (browser) {
+    case 'IE':
+        console.log('go away!');
+        break;
+    case 'Chrome':
+    case 'Firefox':
+        console.log('love you!');
+        break;
+    default:
+        console.log('same all!');
+        break;
+}
+
+
+//11. Loops
+//while loop, while the condition is truthy,
+//body code is executed.
+let i = 3;
+while (i > 0){
+    console.log(`while: ${i}`);
+    i--;
+}
+
+//12. do while
+// do while loop, body code is executed first,
+//then check the condition.
+//do 먼저 실행하고 while조건이 맞는지 확인
+do{
+    console.log(`do while: ${i}`);
+    i--;
+}while(i > 0);
+
+
+//for loops, for(begin; condition; step)
+for(i = 3; i > 0; i--){
+    console.log(`for:${i}`);
+}
+
+for(let i = 3; i > 0; i = i -2){
+    //inline variable declaration
+    console.log(`inline variable for: ${i}`);
+}
+
+//nested loops
+for(let i = 0; i < 10; i++){
+    for(let j = 0; j < 10; j++){
+        console.log(`i: ${i}, j:${j}`);
+    }
+}
+//빅오가 n의 2승이기떄문에 CPU에 안좋음
+
+//break 여기서 끝내버림
+//continue 지금껏만 skip하고 다음스텝으로
+//Q1. iterate from 0 to 10 and print only even numbers(use continue)
+for(let i = 0; i < 11; i++){
+    if(i % 2 !== 0){
+        continue;
+    }
+    console.log(`q1. ${i}`);
+}
+
+for(let i = 0; i < 11; i++){
+    if(i % 2 === 0){
+        console.log(`q1. ${i}`); 
+    }
+}
+//Q2, iterate from 0 to 10 and print numbers until reaching 8 (use break)
+for(let i = 0; i< 11; i++){
+    if(i > 8){
+        break;
+    }
+    console.log(`q2. ${i}`);
+}
+
+//루프 레이블? 쓰지 않고 간편하게 작성 가능
